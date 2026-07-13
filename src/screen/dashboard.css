@@ -1,0 +1,47 @@
+.dashboard-container{
+    min-height:100vh;
+    background:#f4f7fb;
+}
+
+.dashboard-card{
+    padding:30px;
+    border-radius:18px;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+}
+
+.dashboard-value{
+    font-size:42px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.recent-card{
+    margin-top:35px;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.course-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px;
+    margin-top:15px;
+    background:white;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
+
+@media (max-width:900px){
+
+    .dashboard-container{
+        margin-left:0 !important;
+        padding:20px !important;
+    }
+}

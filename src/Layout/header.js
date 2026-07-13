@@ -112,9 +112,19 @@ export default function Header() {
   };
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" , width:"100%" }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} color="info">
+      <AppBar
+  position="fixed"
+  open={open}
+  color="info"
+  sx={{
+    marginLeft: open ? `${drawerWidth}px` : "65px",
+    width: open 
+      ? `calc(100% - ${drawerWidth}px)` 
+      : "calc(100% - 65px)"
+  }}
+>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -426,6 +436,16 @@ export default function Header() {
           )}
         </List>
       </Drawer>
+      <Box
+        component="main"
+        sx={{
+          flexGrow:1,
+          marginLeft: open ? `${drawerWidth}px` : "65px",
+          paddingTop:"60px"
+        }}
+      />
+
+   
     </Box>
   );
 }

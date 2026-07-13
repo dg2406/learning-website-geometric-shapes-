@@ -116,7 +116,7 @@ const Quizpage = () => {
     <>
       <Header />
 
-      <div className="container">
+      <div className="quiz-container">
         <h1>Geometry Quiz</h1>
 
         {!submitted && (
@@ -154,19 +154,22 @@ const Quizpage = () => {
                   {q.id}. {q.question}
                 </h3>
 
-                {q.options.map((option) => (
-                  <div key={option}>
-                    <input
-                      type="radio"
-                      name={q.id}
-                      value={option}
-                      checked={answers[q.id] === option}
-                      onChange={() => handleAnswer(q.id, option)}
-                    />
+                <div className="quiz-options">
+                  {q.options.map((option) => (
+                    <div className="quiz-option" key={option}>
+                      <input
+                        type="radio"
+                        id={`${q.id}-${option}`}
+                        name={q.id}
+                        value={option}
+                        checked={answers[q.id] === option}
+                        onChange={() => handleAnswer(q.id, option)}
+                      />
 
-                    <label>{option}</label>
-                  </div>
-                ))}
+                      <label htmlFor={`${q.id}-${option}`}>{option}</label>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
 
